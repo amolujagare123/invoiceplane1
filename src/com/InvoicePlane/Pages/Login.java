@@ -10,17 +10,17 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by amol on 14/06/2016.
  */
-public class login {
+public class Login {
 
-    @FindBy(xpath = "//*[@id='txtUserName']")
+    @FindBy(xpath = ".//*[@id='email']")
     WebElement txtUserName;
-    @FindBy(xpath = "//*[@id='txtPassword']")
+    @FindBy(xpath = ".//*[@id='password']")
     WebElement txtPassword;
-    @FindBy(xpath = "//*[@id='btnLogIn']")
+    @FindBy(xpath = "./*//*[@id='login']/form/input")
     WebElement btnLogin;
     WebDriver driver;
 
-    public login(WebDriver driver,String url) {
+    public Login(WebDriver driver, String url) {
         this.driver=driver;
         driver.get(url);
         PageFactory.initElements(driver, this);
@@ -29,7 +29,7 @@ public class login {
         }
     }
 
-    public DashBoard Login(String userName, String password) {
+    public DashBoard LoginOperation(String userName, String password) {
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.click();
