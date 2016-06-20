@@ -15,6 +15,7 @@ public class DbCon {
     private Connection conn=null;
     private List<Statement> statementList = new ArrayList<Statement>();
     private static Logger LOGGER = Logger.getLogger(DbCon.class.getName());
+
     public DbCon() throws Exception
     {
         getConnection();
@@ -59,11 +60,15 @@ public class DbCon {
     private void getConnection()throws Exception
     {
         LOGGER.debug("Creating new Database Connection");
+
         ResourceBundle dbDetails = ResourceBundle.getBundle("dbSource");
+
         String ConnStr=dbDetails.getString("dbServer");
         String uname=dbDetails.getString("UserName");
         String pass=dbDetails.getString("Password");
+
         String connectionURL = ConnStr;
+
         try
         {
             Class.forName("com.mysql.jdbc.Driver");

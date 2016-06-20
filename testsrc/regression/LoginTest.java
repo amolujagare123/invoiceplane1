@@ -1,5 +1,7 @@
 package regression;
 
+import com.InvoicePlane.Pages.DashBoard;
+import com.InvoicePlane.Pages.Login;
 import com.InvoicePlane.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import static com.InvoicePlane.utilities.Driver.getDriver;
 
@@ -17,16 +20,16 @@ import static com.InvoicePlane.utilities.Driver.getDriver;
 
 public class LoginTest {
     WebDriver driver = getDriver(Driver.DriverTypes.CHROME);
+    ResourceBundle dbDetails = ResourceBundle.getBundle("InvoicePlane");
+    String url=dbDetails.getString("url");
     @Test
     public void login() {
         driver.manage().window().maximize();
-        driver.get("http://clinic.scriptinglogic.com/");
+        driver.get(url);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//input[@id='login_session']")).sendKeys("admin");
-        driver.findElement(By.xpath("//input[@id='pwd_session']")).sendKeys("admin");
-        driver.findElement(By.xpath("//input[@value='Enter']")).click();
-        boolean logoutLinkDisplayed = driver.findElement(By.linkText("Logout")).isDisplayed();
-        Assert.assertEquals(true, logoutLinkDisplayed, "Login Failed");
-        driver.quit();
+         Login login = new Login(driver,url);
+        DashBoard dashBoard= login.LoginOperation("amolujagare@gmail.com","admin123");
+
+       // driver.quit();
     }
 }

@@ -14,10 +14,17 @@ public class Login {
 
     @FindBy(xpath = ".//*[@id='email']")
     WebElement txtUserName;
+
     @FindBy(xpath = ".//*[@id='password']")
     WebElement txtPassword;
+
+    @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
+    WebElement lnkForgotPassword;
+
     @FindBy(xpath = "./*//*[@id='login']/form/input")
     WebElement btnLogin;
+
+
     WebDriver driver;
 
     public Login(WebDriver driver, String url) {
@@ -35,5 +42,10 @@ public class Login {
         btnLogin.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return new DashBoard(driver);
+    }
+
+    public void clickForgotPassword()
+    {
+        lnkForgotPassword.click();
     }
 }
