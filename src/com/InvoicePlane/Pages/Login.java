@@ -14,15 +14,23 @@ public class Login {
 
     @FindBy(xpath = ".//*[@id='email']")
     WebElement txtUserName;
+
     @FindBy(xpath = ".//*[@id='password']")
     WebElement txtPassword;
+
     @FindBy(xpath = "./*//*[@id='login']/form/input")
     WebElement btnLogin;
+
+    @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
+            WebElement linkForgotPassword;
+
     WebDriver driver;
 
     public Login(WebDriver driver, String url) {
         this.driver=driver;
         driver.get(url);
+
+
         PageFactory.initElements(driver, this);
         if(!btnLogin.isDisplayed()){
             throw new IllegalStateException("This is not Login Page");
@@ -35,5 +43,10 @@ public class Login {
         btnLogin.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return new DashBoard(driver);
+    }
+
+    public void clickForgotPassword()
+    {
+        linkForgotPassword.click();
     }
 }
