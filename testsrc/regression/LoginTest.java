@@ -18,12 +18,14 @@ import static com.InvoicePlane.utilities.Driver.getDriver;
  * Created by amol on 14/06/2016.
  */
 
-public class LoginTest {
+public class LoginTest
+{
     WebDriver driver = getDriver(Driver.DriverTypes.CHROME);
     ResourceBundle dbDetails = ResourceBundle.getBundle("InvoicePlane");
     String url=dbDetails.getString("url");
     @Test
-    public void login() {
+    public void login()
+    {
         driver.manage().window().maximize();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);

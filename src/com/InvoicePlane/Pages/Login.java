@@ -27,7 +27,9 @@ public class Login {
 
     WebDriver driver;
 
-    public Login(WebDriver driver, String url) {
+    public Login(WebDriver driver, String url)
+
+    {
         this.driver=driver;
         driver.get(url);
         PageFactory.initElements(driver, this);
@@ -36,7 +38,8 @@ public class Login {
         }
     }
 
-    public DashBoard LoginOperation(String userName, String password) {
+    public DashBoard LoginOperation(String userName, String password)
+    {
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.click();
@@ -45,6 +48,7 @@ public class Login {
     }
 
     public void clickForgotPassword()
+
     {
         lnkForgotPassword.click();
     }
