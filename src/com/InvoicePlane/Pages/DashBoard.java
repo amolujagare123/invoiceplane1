@@ -10,9 +10,8 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class DashBoard {
     WebDriver driver;
-    @FindBy(xpath = "//a[@href='../Reservation/Reservation.aspx']")
-    WebElement lnkNewPo;
-    @FindBy(xpath = "//a[@href='../../Login.aspx']")
+
+    @FindBy(xpath = "//a[@data-original-title='Logout']")
     WebElement imgLogout;
 
     public DashBoard(WebDriver driver) {

@@ -17,16 +17,24 @@ public class Login {
 
     @FindBy(xpath = ".//*[@id='password']")
     WebElement txtPassword;
-
     @FindBy(xpath = "./*//*[@id='login']/form/input")
     WebElement btnLogin;
 
     @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
             WebElement linkForgotPassword;
 
+    @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
+    WebElement lnkForgotPassword;
+
+    @FindBy(xpath = "./*//*[@id='login']/form/input")
+    WebElement btnLogin;
+
+
     WebDriver driver;
 
-    public Login(WebDriver driver, String url) {
+    public Login(WebDriver driver, String url)
+
+    {
         this.driver=driver;
         driver.get(url);
 
@@ -37,7 +45,8 @@ public class Login {
         }
     }
 
-    public DashBoard LoginOperation(String userName, String password) {
+    public DashBoard LoginOperation(String userName, String password)
+    {
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.click();
@@ -46,7 +55,13 @@ public class Login {
     }
 
     public void clickForgotPassword()
+
     {
         linkForgotPassword.click();
+
+
+    {
+        lnkForgotPassword.click();
+
     }
 }

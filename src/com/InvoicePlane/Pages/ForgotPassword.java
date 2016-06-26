@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class ForgotPassword {
 
+
         @FindBy(xpath = ".//*[@id='email']")
         WebElement emailID;
 
@@ -41,4 +42,37 @@ public class ForgotPassword {
     {
         resetbtn.click();
     }
+
+    @FindBy(xpath = ".//*[@id='email']")
+    WebElement txtEmail;
+
+    @FindBy(xpath = "//input[@value='Reset password']")
+    WebElement btnResetPass;
+
+    @FindBy (xpath=".//*[@id='password_reset']/h3")
+        WebElement textPasswordReset;
+
+    WebDriver driver;
+
+    public ForgotPassword(WebDriver driver) {
+        this.driver=driver;
+     //   driver.get(url);
+        PageFactory.initElements(driver, this);
+
+        if(!textPasswordReset.isDisplayed()){
+            throw new IllegalStateException("This is not Forgot Password Page");
+        }
+    }
+
+    public void clickReset()
+    {
+        btnResetPass.click();
+    }
+
+    public void setEmail(String email)
+    {
+        txtEmail.sendKeys(email);
+    }
+
+
 }
