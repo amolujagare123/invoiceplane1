@@ -1,85 +1,100 @@
 package com.InvoicePlane.Pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by amol on 15/06/2016.
  */
 public class Menu {
 
-    @FindBy (linkText="Dashboard")
+    @FindBy (xpath="//span[text()='Dashboard']")
     WebElement lnkDashboard;
 
-    @FindBy (linkText="Clients")
+    @FindBy (xpath="//span[text()='Clients']")
     WebElement lnkClients;
 
-    @FindBy (linkText="Add Client")
+    @FindBy (xpath ="//span[text()='Add Clients']")
     WebElement lnkAddClient;
 
 
-    @FindBy (linkText="View Clients")
+    @FindBy (xpath="//span[text()='View Clients']")
     WebElement lnkViewClients;
 
 
-    @FindBy (linkText="Quotes")
+    @FindBy (xpath = "//span[text()='Quotes']")
     WebElement lnkQuotes;
 
 
-    @FindBy (linkText ="Create Quote")
+    @FindBy (xpath = "//span[text()='Create Quote']")
     WebElement lnkCreateQuote;
 
-    @FindBy (linkText ="View Quotes")
+    @FindBy (xpath = "//span[text()='View Quote']")
     WebElement lnkViewQuotes;
 
-    @FindBy (linkText = "Invoices")
+    @FindBy (xpath = "//span[text()='Invoices']")
     WebElement lnkInvoices;
 
-    @FindBy (linkText ="Create Invoice")
+    @FindBy (xpath = "//span[text()='Create Invoice']")
     WebElement lnkCreateInvoice;
 
-    @FindBy (linkText ="View Invoices")
+    @FindBy (xpath = "//span[text()='View Invoices']")
     WebElement lnkViewInvoices;
 
-    @FindBy (linkText ="View Recurring Invoices")
+    @FindBy (xpath ="//span[text()='View Recurring Invoices']")
     WebElement lnkViewRecurringInvoices;
 
-    @FindBy(linkText = "Products")
+    @FindBy(xpath = "//span[text()='Products']")
     WebElement lnkProducts;
 
-    @FindBy(linkText = " Create Product")
+    @FindBy(xpath = "//span[text()='Create Product']")
     WebElement lnkCreateProduct;
 
-    @FindBy(linkText = "View Product")
+    @FindBy(xpath = "//span[text()='View products']")
     WebElement lnkViewProducts;
 
-    @FindBy(linkText = "Product families")
+    @FindBy(xpath = "//span[text()='Product Families']")
     WebElement lnkProductfamilies;
 
-    @FindBy(linkText ="Payments")
+    @FindBy(xpath ="//span[text()='Payments']")
     WebElement lnkPayments;
 
-    @FindBy(linkText = "Enter Payment")
+    @FindBy(xpath= "//span[text()='Enter Payment']")
     WebElement lnkEnterPayment;
 
-    @FindBy(linkText = "View Payments")
+    @FindBy(xpath = "//span[text()='View Payments']")
     WebElement lnkViewPayments;
 
-    @FindBy(linkText = "Reports")
+    @FindBy(xpath = "//span[text()='Reports']")
     WebElement lnkReports;
 
-    @FindBy(linkText = "Invoice Aging")
+    @FindBy(xpath = "//span[text()='Invoice Aging']")
     WebElement lnkInvoiceAging;
 
-    @FindBy(linkText = "Payment History")
+    @FindBy(xpath= "//span[text()='Payment History']")
     WebElement lnkPaymentHistory;
 
-    @FindBy(linkText = "Sales by Client")
+    @FindBy(xpath= "//span[text()='Sales by Client']")
     WebElement lnkSalesbyClient;
 
-    @FindBy(linkText = "Sales by Date")
+    @FindBy(xpath= "//span[text()='Sales by Date']")
     WebElement lnksalesbyDate;
+
+    WebDriver driver;
+
+    public Menu(WebDriver driver)
+
+    {
+        this.driver=driver;
+
+        PageFactory.initElements(driver, this);
+
+    }
+
+
 
     void clickDashboard()
     {
@@ -98,7 +113,7 @@ public class Menu {
         lnkViewClients.click();
     }
 
-    void ClickCreateQuote()
+    public  void  ClickCreateQuote()
     {
         lnkQuotes.click();
         lnkCreateQuote.click();
@@ -110,13 +125,13 @@ public class Menu {
         lnkViewQuotes.click();
     }
 
-    void ClickCreateInvoices()
+    public void ClickCreateInvoice()
     {
         lnkInvoices.click();
         lnkCreateInvoice.click();
     }
 
-    void ClickViewInvoices()
+   public  void ClickViewInvoices()
     {
         lnkInvoices.click();
         lnkViewInvoices.click();
