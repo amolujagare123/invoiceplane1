@@ -17,11 +17,9 @@ public class Login {
 
     @FindBy(xpath = ".//*[@id='password']")
     WebElement txtPassword;
-    @FindBy(xpath = "./*//*[@id='login']/form/input")
-    WebElement btnLogin;
 
     @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
-            WebElement linkForgotPassword;
+    WebElement linkForgotPassword;
 
     @FindBy(xpath = ".//*[@id='login']/div[2]/small/a")
     WebElement lnkForgotPassword;
@@ -35,18 +33,17 @@ public class Login {
     public Login(WebDriver driver, String url)
 
     {
-        this.driver=driver;
+        this.driver = driver;
         driver.get(url);
 
 
         PageFactory.initElements(driver, this);
-        if(!btnLogin.isDisplayed()){
+        if (!btnLogin.isDisplayed()) {
             throw new IllegalStateException("This is not Login Page");
         }
     }
 
-    public DashBoard LoginOperation(String userName, String password)
-    {
+    public DashBoard LoginOperation(String userName, String password) {
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.click();
@@ -60,8 +57,9 @@ public class Login {
         linkForgotPassword.click();
 
 
-    {
-        lnkForgotPassword.click();
+        {
+            lnkForgotPassword.click();
 
+        }
     }
 }
