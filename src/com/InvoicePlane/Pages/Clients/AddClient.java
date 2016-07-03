@@ -70,8 +70,9 @@ public class AddClient
     WebElement lblCountry;
 
 
-    @FindBy(xpath = "//*[@id='select2-client_country-container']")
-    WebElement dropDownCountry;
+//    @FindBy(xpath = "//input[@class='select2-search__field']")
+  @FindBy (xpath = "html/body/span/span/span[1]/input")
+    WebElement inputCountry;
 
 
     @FindBy(xpath = ".//*[@id='content']/div/div[2]/fieldset/legend")
@@ -103,7 +104,7 @@ public class AddClient
 
     @FindBy(xpath = ".//*[@id='client_email']")
     WebElement txtEmailAddress;
-
+//set
 
     @FindBy(xpath = ".//*[@id='content']/div/div[2]/fieldset/div[5]/label")
     WebElement lblWebAddress;
@@ -129,6 +130,10 @@ public class AddClient
 
     @FindBy(xpath = ".//*[@id='client_tax_code']")
     WebElement txtTaxesCode;
+
+
+    @FindBy(xpath = ".//*[@id='btn-submit']")
+    WebElement btnSave;
 
     WebDriver driver;
 
@@ -221,9 +226,7 @@ public class AddClient
 
     public void setCountry(String country)
     {
-        Select cn = new Select(dropDownCountry);
-
-        cn.selectByVisibleText(country);
+             inputCountry.sendKeys(country);
     }
 
 
@@ -269,7 +272,7 @@ public class AddClient
         return lblEmailAddress.getText();
     }
 
-    public void set(String EmailAddress)
+    public void setEmailAddress(String EmailAddress)
     {
         txtEmailAddress.sendKeys(EmailAddress);
     }
@@ -312,7 +315,7 @@ public class AddClient
     }
 
 
-
-
-
+    public void clickSave() {
+        btnSave.click();
+    }
 }
