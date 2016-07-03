@@ -1,172 +1,100 @@
 package com.InvoicePlane.Pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-<<<<<<< HEAD
-=======
 import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
->>>>>>> origin/master
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by amol on 15/06/2016.
  */
 public class Menu {
 
-<<<<<<< HEAD
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[1]/a[1]")
+    @FindBy (xpath="//span[text()='Dashboard']")
     WebElement lnkDashboard;
 
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[1]/a[1]")
-    WebElement lnkClient;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[2]/ul/li[1]/a")
-    WebElement lnkAddClient;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[2]/ul/li[2]/a")
-    WebElement lnkViewClient;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[2]/ul/li[2]/a")
-    WebElement lnkQuotes;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[3]/ul/li[1]/a")
-    WebElement lnkCreateQuote;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[3]/ul/li[1]/a")
-    WebElement lnkViewQuotes;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[4]/a/span")
-    WebElement lnkInvoices;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[4]/ul/li[1]/a")
-    WebElement lnkCreateInvoice;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[4]/ul/li[2]/a")
-    WebElement lnkViewInvoices;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[4]/ul/li[3]/a")
-    WebElement lnkViewRecurringInvoices;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[5]/a/span")
-    WebElement lnkProducts;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[5]/ul/li[1]/a")
-    WebElement lnkCreateProduct;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[5]/ul/li[2]/a")
-    WebElement lnkViewProducts;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[5]/ul/li[3]/a")
-    WebElement lnkProductFamilies;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[6]/a/span")
-    WebElement lnkPayments;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[6]/ul/li[1]/a")
-    WebElement lnkEnterPayment;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[6]/ul/li[2]/a")
-    WebElement lnkViewPayments;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[8]/a/span")
-    WebElement lnkReports;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[8]/ul/li[1]/a")
-    WebElement lnkInvoiceAging;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[8]/ul/li[2]/a")
-    WebElement lnkPaymentHistory;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[8]/ul/li[3]/a")
-    WebElement lnkSalesbyClient;
-
-    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[8]/ul/li[4]/a")
-    WebElement lnkSalesbyDate;
-
-    void addClient()
-    {
-        lnkClient.click();
-        lnkAddClient.click();
-    }
-
-    void viewClient()
-    {
-        lnkClient.click();
-        lnkViewClient.click();
-    }
-
-    void createQuote()
-=======
-    @FindBy (linkText="Dashboard")
-    WebElement lnkDashboard;
-
-    @FindBy (linkText="Clients")
+    @FindBy (xpath="//span[text()='Clients']")
     WebElement lnkClients;
 
-    @FindBy (linkText="Add Client")
+    @FindBy (xpath ="//span[text()='Add Clients']")
     WebElement lnkAddClient;
 
 
-    @FindBy (linkText="View Clients")
+    @FindBy (xpath="//span[text()='View Clients']")
     WebElement lnkViewClients;
 
 
-    @FindBy (linkText="Quotes")
+    @FindBy (xpath = "//span[text()='Quotes']")
     WebElement lnkQuotes;
 
 
-    @FindBy (linkText ="Create Quote")
+    @FindBy (xpath = "//span[text()='Create Quote']")
     WebElement lnkCreateQuote;
 
-    @FindBy (linkText ="View Quotes")
+    @FindBy (xpath = "//span[text()='View Quote']")
     WebElement lnkViewQuotes;
 
-    @FindBy (linkText = "Invoices")
+    @FindBy (xpath = "//span[text()='Invoices']")
     WebElement lnkInvoices;
 
-    @FindBy (linkText ="Create Invoice")
+    @FindBy (xpath = "//span[text()='Create Invoice']")
     WebElement lnkCreateInvoice;
 
-    @FindBy (linkText ="View Invoices")
+    @FindBy (xpath = "//span[text()='View Invoices']")
     WebElement lnkViewInvoices;
 
-    @FindBy (linkText ="View Recurring Invoices")
+    @FindBy (xpath ="//span[text()='View Recurring Invoices']")
     WebElement lnkViewRecurringInvoices;
 
-    @FindBy(linkText = "Products")
+    @FindBy(xpath = "//span[text()='Products']")
     WebElement lnkProducts;
 
-    @FindBy(linkText = " Create Product")
+    @FindBy(xpath = "//span[text()='Create Product']")
     WebElement lnkCreateProduct;
 
-    @FindBy(linkText = "View Product")
+    @FindBy(xpath = "//span[text()='View products']")
     WebElement lnkViewProducts;
 
-    @FindBy(linkText = "Product families")
+    @FindBy(xpath = "//span[text()='Product Families']")
     WebElement lnkProductfamilies;
 
-    @FindBy(linkText ="Payments")
+    @FindBy(xpath ="//span[text()='Payments']")
     WebElement lnkPayments;
 
-    @FindBy(linkText = "Enter Payment")
+    @FindBy(xpath= "//span[text()='Enter Payment']")
     WebElement lnkEnterPayment;
 
-    @FindBy(linkText = "View Payments")
+    @FindBy(xpath = "//span[text()='View Payments']")
     WebElement lnkViewPayments;
 
-    @FindBy(linkText = "Reports")
+    @FindBy(xpath = "//span[text()='Reports']")
     WebElement lnkReports;
 
-    @FindBy(linkText = "Invoice Aging")
+    @FindBy(xpath = "//span[text()='Invoice Aging']")
     WebElement lnkInvoiceAging;
 
-    @FindBy(linkText = "Payment History")
+    @FindBy(xpath= "//span[text()='Payment History']")
     WebElement lnkPaymentHistory;
 
-    @FindBy(linkText = "Sales by Client")
+    @FindBy(xpath= "//span[text()='Sales by Client']")
     WebElement lnkSalesbyClient;
 
-    @FindBy(linkText = "Sales by Date")
+    @FindBy(xpath= "//span[text()='Sales by Date']")
     WebElement lnksalesbyDate;
+
+    WebDriver driver;
+
+    public Menu(WebDriver driver)
+
+    {
+        this.driver=driver;
+
+        PageFactory.initElements(driver, this);
+
+    }
+
+
 
     void clickDashboard()
     {
@@ -185,62 +113,36 @@ public class Menu {
         lnkViewClients.click();
     }
 
-    void ClickCreateQuote()
->>>>>>> origin/master
+    public  void  ClickCreateQuote()
     {
         lnkQuotes.click();
         lnkCreateQuote.click();
     }
 
-<<<<<<< HEAD
-    void viewQuotes()
-=======
     void ClickViewQuote()
->>>>>>> origin/master
     {
         lnkQuotes.click();
         lnkViewQuotes.click();
     }
 
-<<<<<<< HEAD
-    void createInvoice()
-=======
-    void ClickCreateInvoices()
->>>>>>> origin/master
+    public void ClickCreateInvoice()
     {
         lnkInvoices.click();
         lnkCreateInvoice.click();
     }
 
-<<<<<<< HEAD
-    void viewInvoices()
-=======
-    void ClickViewInvoices()
->>>>>>> origin/master
+   public  void ClickViewInvoices()
     {
         lnkInvoices.click();
         lnkViewInvoices.click();
     }
 
-<<<<<<< HEAD
-    void viewRecurringInvoices()
-=======
     void ClickViewRecurringInvoices()
->>>>>>> origin/master
     {
         lnkInvoices.click();
         lnkViewRecurringInvoices.click();
     }
 
-<<<<<<< HEAD
-    void createProduct()
-    {
-        lnkProducts.click();
-        lnkCreateProduct.click();
-    }
-
-    void viewProducts()
-=======
    void ClickCreateProduct()
    {
        lnkProducts.click();
@@ -248,21 +150,11 @@ public class Menu {
    }
 
     void ClickViewProduct()
->>>>>>> origin/master
     {
         lnkProducts.click();
         lnkViewProducts.click();
     }
 
-<<<<<<< HEAD
-    void productFamilies()
-    {
-        lnkProducts.click();
-        lnkProductFamilies.click();
-    }
-
-    void enterPaymnet()
-=======
     void ClickProductfamilies()
     {
         lnkProducts.click();
@@ -270,21 +162,10 @@ public class Menu {
     }
 
     void ClickEnterPayment()
->>>>>>> origin/master
     {
         lnkPayments.click();
         lnkEnterPayment.click();
     }
-<<<<<<< HEAD
-
-    void viewPaymentsO()
-    {
-        lnkPayments.click();
-        lnkEnterPayment.click();
-    }
-
-    void invoiceAging()
-=======
     void ClickViewPayments()
     {
         lnkPayments.click();
@@ -292,45 +173,29 @@ public class Menu {
     }
 
     void ClickInvoiceAging()
->>>>>>> origin/master
     {
         lnkReports.click();
         lnkInvoiceAging.click();
     }
 
-<<<<<<< HEAD
-    void paymentHistory()
-=======
     void ClickPaymentHistory()
->>>>>>> origin/master
     {
         lnkReports.click();
         lnkPaymentHistory.click();
     }
 
-<<<<<<< HEAD
-    void salesByClient()
-=======
 
     void ClickSalesbyClient()
->>>>>>> origin/master
     {
         lnkReports.click();
         lnkSalesbyClient.click();
     }
 
-<<<<<<< HEAD
-    void salesByDate()
-    {
-        lnkReports.click();
-        lnkSalesbyDate.click();
-=======
     void ClickSalesbyDate()
     {
         lnkReports.click();
         lnksalesbyDate.click();
 
->>>>>>> origin/master
     }
 
 

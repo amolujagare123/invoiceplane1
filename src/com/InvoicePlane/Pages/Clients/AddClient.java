@@ -1,11 +1,5 @@
 package com.InvoicePlane.Pages.Clients;
 
-<<<<<<< HEAD
-/**
- * Created by dell on 19/06/2016.
- */
-public class AddClient {
-=======
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -318,5 +312,7 @@ public class AddClient
     }
 
 
->>>>>>> origin/master
+
+
+
 }
