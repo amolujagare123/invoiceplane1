@@ -41,6 +41,22 @@ public class ViewClient
     @FindBy(xpath = ".//*[@id='headerbar']/div[1]/button")
     WebElement btnSubmenu;
 
+    @FindBy(xpath = ".//*[@id='ip-submenu-collapse']/div[1]/div")
+    WebElement btnGroup;
+
+
+    @FindBy(xpath=".//*[@id='ip-submenu-collapse']/div[2]/ul/li[1]/a")
+    WebElement btnActive;
+
+    @FindBy(xpath=".//*[@id='ip-submenu-collapse']/div[2]/ul/li[2]/a")
+    WebElement btnInActive;
+
+
+    @FindBy(xpath=".//*[@id='ip-submenu-collapse']/div[2]/ul/li[3]/a")
+    WebElement btnAll;
+
+
+
     @FindBy(xpath = ".//*[@id='headerbar']/div[1]/a")
     WebElement btnNew;
 
@@ -113,6 +129,34 @@ public class ViewClient
         return btnSubmenu.getText();
     }
 
+
+    public String getTextbtngroup()
+    {
+        return btnGroup.getText();
+    }
+
+
+    public String getTextbtnActive()
+    {
+      return btnActive.getText();
+    }
+
+
+
+    public String getTextbtnInActive()
+    {
+        return btnInActive.getText();
+    }
+
+
+
+    public String getTextbtnAll()
+    {
+        return btnAll.getText();
+    }
+
+
+
     public String getTextNew()
 
     {
@@ -125,6 +169,9 @@ public class ViewClient
     {
         return SymbolPlus.getText();
     }
+
+
+
 
 }
 
