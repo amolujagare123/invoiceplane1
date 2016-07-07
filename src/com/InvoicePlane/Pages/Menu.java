@@ -137,7 +137,7 @@ public class Menu {
         lnkViewInvoices.click();
     }
 
-    void ClickViewRecurringInvoices()
+    public void ClickViewRecurringInvoices()
     {
         lnkInvoices.click();
         lnkViewRecurringInvoices.click();
@@ -161,7 +161,7 @@ public class Menu {
         lnkProductfamilies.click();
     }
 
-    void ClickEnterPayment()
+    public void ClickEnterPayment()
     {
         lnkPayments.click();
         lnkEnterPayment.click();

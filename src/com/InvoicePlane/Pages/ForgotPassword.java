@@ -20,7 +20,7 @@ public class ForgotPassword {
     @FindBy(xpath = ".//*[@id='password_reset']/h3")
         WebElement textPwdReset;
 
-    WebDriver driver;
+//    WebDriver driver;
 
     public ForgotPassword(WebDriver driver)
     {
@@ -54,25 +54,7 @@ public class ForgotPassword {
 
     WebDriver driver;
 
-    public ForgotPassword(WebDriver driver) {
-        this.driver=driver;
-     //   driver.get(url);
-        PageFactory.initElements(driver, this);
 
-        if(!textPasswordReset.isDisplayed()){
-            throw new IllegalStateException("This is not Forgot Password Page");
-        }
-    }
-
-    public void clickReset()
-    {
-        btnResetPass.click();
-    }
-
-    public void setEmail(String email)
-    {
-        txtEmail.sendKeys(email);
-    }
 
 
 }
