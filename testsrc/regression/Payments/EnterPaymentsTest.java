@@ -24,7 +24,7 @@ public class EnterPaymentsTest {
         driver = getDriver(Driver.DriverTypes.CHROME);
         Login login = new Login(driver, "http://billing.scriptinglogic.net");
         DashBoard dashBoard = login.LoginOperation("amolujagare@gmail.com", "admin123");
-
+        //DashBoard dashBoard = login.LoginOperation(" vedujagtap187@gmail.com","Vedashree187");
 
         Menu menu = new Menu(driver);
         menu.ClickEnterPayment();

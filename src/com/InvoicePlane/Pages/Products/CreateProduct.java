@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.Select;
  */
 public class CreateProduct {
 
+    @FindBy(xpath = ".//*[@id='btn-submit']")
+    WebElement btnSave;
+
     @FindBy(xpath = ".//*[@id='headerbar']/h1")
     WebElement lblProductForm;
 
@@ -58,6 +61,9 @@ public class CreateProduct {
 
     @FindBy(xpath = ".//*[@id='purchase_price']")
     WebElement txtPurchaseprice;
+
+    @FindBy(xpath = ".//*[@id='btn-cancel']")
+    WebElement btnCancel;
 
 
     WebDriver driver;
@@ -141,4 +147,12 @@ public class CreateProduct {
         txtPurchaseprice.sendKeys(purchseprice);
     }
 
+    public void ClickSave()
+    {
+        btnSave.click();
+    }
+    public void ClickCancel()
+    {
+        btnCancel.click();
+    }
 }
