@@ -57,6 +57,10 @@ public class CreateQuote {
     WebElement btnSubmit;
 
 
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    WebElement lblSuccessMessage;
+
+
     WebDriver driver;
 
     public CreateQuote(WebDriver driver) {
@@ -156,6 +160,18 @@ public class CreateQuote {
         InvoiceGroup.selectByVisibleText(InvoiceGroupText);
     }
 
+
+    public void ClickSubmit()
+    {
+        btnSubmit.click();
+    }
+
+
+    public String getTextSuccessMessage()
+    {
+        return lblSuccessMessage.getText();
+
+    }
 
 
 

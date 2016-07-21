@@ -66,12 +66,16 @@ public class AddClient
     WebElement txtZipCode;
 
 
+    @FindBy (xpath="//span[@id='select2-client_country-container']")
+    WebElement containerContry;
+    //click
+
     @FindBy(xpath = ".//*[@id='content']/div/div[1]/fieldset/div[6]/label")
     WebElement lblCountry;
 
 
 //    @FindBy(xpath = "//input[@class='select2-search__field']")
-  @FindBy (xpath = "html/body/span/span/span[1]/input")
+  @FindBy (xpath = "//input[@class='select2-search__field']")
     WebElement inputCountry;
 
 
@@ -226,6 +230,8 @@ public class AddClient
 
     public void setCountry(String country)
     {
+        containerContry.click();
+
              inputCountry.sendKeys(country);
     }
 
@@ -315,7 +321,8 @@ public class AddClient
     }
 
 
-    public void clickSave() {
+    public void clickSave()
+    {
         btnSave.click();
     }
 }

@@ -17,7 +17,7 @@ public class Menu {
     @FindBy (xpath="//span[text()='Clients']")
     WebElement lnkClients;
 
-    @FindBy (xpath ="//span[text()='Add Clients']")
+    @FindBy (linkText ="Add Client")
     WebElement lnkAddClient;
 
 
@@ -101,7 +101,7 @@ public class Menu {
         lnkDashboard.click();
     }
 
-    void clickaddclient()
+    public void clickaddclient()
     {
         lnkClients.click();
         lnkAddClient.click();
@@ -197,7 +197,6 @@ public class Menu {
         lnksalesbyDate.click();
 
     }
-
 
 
 }
