@@ -20,10 +20,16 @@ public class AddProductFamilies {
     WebElement txtFamilyName;
 
     @FindBy(xpath = ".//*[@id='btn-submit']")
-    WebElement btnSave;
+    static WebElement btnSave;
 
     @FindBy(xpath = ".//*[@id='btn-cancel']")
-    WebElement btnCancel;
+    static WebElement btnCancel;
+
+    @FindBy(linkText = "Record successfully created")
+    WebElement recordAdded;
+
+    @FindBy(linkText = "Family already exists!")
+    WebElement alreadyExistsRecord;
 
     WebDriver driver;
 
@@ -46,6 +52,7 @@ public class AddProductFamilies {
     public void setProductFamily(String productfamiily)
     {
         txtFamilyName.sendKeys(productfamiily);
+
     }
     public void ClickSave()
     {
