@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by dell on 19/06/2016.
  */
@@ -51,8 +55,21 @@ public class PaymentHistory {
         inputToDate.click();
     }
 
+    public void setFromDate(String dateStr) throws ParseException
+    {
+        clickInputFromDate();
+        SimpleDateFormat setDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat curDateFormat = new SimpleDateFormat("MMMM yyyy");
+        Date setpaymnetDate = setDateFormat.parse(dateStr);
 
-
+    }
+    public void setToDate(String dateStr) throws ParseException
+    {
+        clickInputToDate();
+        SimpleDateFormat setDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat curDateFormat = new SimpleDateFormat("MMMM yyyy");
+        Date setpaymentDate = setDateFormat.parse(dateStr);
+    }
     public String getFromDate()
     {
         return lblFromDate.getText();

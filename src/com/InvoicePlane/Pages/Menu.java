@@ -50,13 +50,16 @@ public class Menu {
     @FindBy(xpath = "//span[text()='Products']")
     WebElement lnkProducts;
 
-    @FindBy(xpath = "//span[text()='Create Product']")
+//    @FindBy(xpath = "//span[text()='Create Product']")
+//    WebElement lnkCreateProduct;
+
+    @FindBy(xpath = ".//*[@id='ip-navbar-collapse']/ul[1]/li[5]/ul/li[1]/a")
     WebElement lnkCreateProduct;
 
     @FindBy(xpath = "//span[text()='View products']")
     WebElement lnkViewProducts;
 
-    @FindBy(xpath = "//span[text()='Product Families']")
+    @FindBy(linkText = "Product families")
     WebElement lnkProductfamilies;
 
     @FindBy(xpath ="//span[text()='Payments']")
@@ -96,7 +99,7 @@ public class Menu {
 
 
 
-    void clickDashboard()
+    public void clickDashboard()
     {
         lnkDashboard.click();
     }
@@ -107,7 +110,7 @@ public class Menu {
         lnkAddClient.click();
     }
 
-    void clickviewclient()
+    public void clickviewclient()
     {
         lnkClients.click();
         lnkViewClients.click();
@@ -119,7 +122,7 @@ public class Menu {
         lnkCreateQuote.click();
     }
 
-    void ClickViewQuote()
+    public void ClickViewQuote()
     {
         lnkQuotes.click();
         lnkViewQuotes.click();
@@ -143,19 +146,19 @@ public class Menu {
         lnkViewRecurringInvoices.click();
     }
 
-   void ClickCreateProduct()
+   public void ClickCreateProduct()
    {
        lnkProducts.click();
        lnkCreateProduct.click();
    }
 
-    void ClickViewProduct()
+    public void ClickViewProduct()
     {
         lnkProducts.click();
         lnkViewProducts.click();
     }
 
-    void ClickProductfamilies()
+    public void ClickProductfamilies()
     {
         lnkProducts.click();
         lnkProductfamilies.click();
@@ -166,19 +169,19 @@ public class Menu {
         lnkPayments.click();
         lnkEnterPayment.click();
     }
-    void ClickViewPayments()
+    public void ClickViewPayments()
     {
         lnkPayments.click();
         lnkViewPayments.click();
     }
 
-    void ClickInvoiceAging()
+    public void ClickInvoiceAging()
     {
         lnkReports.click();
         lnkInvoiceAging.click();
     }
 
-    void ClickPaymentHistory()
+    public void ClickPaymentHistory()
     {
         lnkReports.click();
         lnkPaymentHistory.click();

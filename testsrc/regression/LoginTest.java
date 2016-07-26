@@ -28,17 +28,17 @@ public class LoginTest
     {
         driver.manage().window().maximize();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 
 
-//        Login login=new Login(driver,url);
-//        DashBoard dashBoard=login.LoginOperation("vedujagtap187@gmail.com","Vedashree187");
+       Login login=new Login(driver,url);
+        DashBoard dashBoard=login.LoginOperation("vedujagtap187@gmail.com","Vedashree187");
         driver.quit();
 
-         Login login = new Login(driver,url);
-        DashBoard dashBoard= login.LoginOperation("amolujagare@gmail.com","admin123");
-
-       // driver.quit();
+//         Login login = new Login(driver,url);
+//        DashBoard dashBoard= login.LoginOperation("amolujagare@gmail.com","admin123");
+//
+//        driver.quit();
 
     }
 }

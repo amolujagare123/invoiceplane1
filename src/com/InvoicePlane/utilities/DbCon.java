@@ -64,7 +64,7 @@ public class DbCon {
         ResourceBundle dbDetails = ResourceBundle.getBundle("dbSource");
 
         String ConnStr=dbDetails.getString("dbServer");
-        String uname=dbDetails.getString("UserName");
+        String uname=dbDetails.getString("Username");
         String pass=dbDetails.getString("Password");
 
         String connectionURL = ConnStr;
