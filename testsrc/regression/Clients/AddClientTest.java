@@ -10,10 +10,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -114,101 +111,100 @@ public class AddClientTest {
               data = new String[rowCount][14];
             //System.out.println(rowCount);
 
-            for (int i = 1; i < rowCount; i++)
+            for (int i = 1; i < rowCount-1; i++)
             {
                 HSSFRow row = worksheet.getRow(i);
                // System.out.println(rowCount);
 
                 HSSFCell clientName = row.getCell(0);
                 if(clientName==null)
-                    data[i][0] = "";
+                    data[i-1][0] = "";
                 else
-                    data[i][0] = ""+clientName.getStringCellValue();
+                    data[i-1][0] = ""+clientName.getStringCellValue();
 
                 HSSFCell StreetAddress1 = row.getCell(1);
                 if(StreetAddress1==null)
-                    data[i][1] = "";
+                    data[i-1][1] = "";
                 else
-                data[i][1] = ""+StreetAddress1.getStringCellValue();
+                data[i-1][1] = ""+StreetAddress1.getStringCellValue();
 
                 HSSFCell StreetAddress2 = row.getCell(2);
                 if(StreetAddress2==null)
-                    data[i][2] = "";
+                    data[i-1][2] = "";
                 else
-                    data[i][2] = ""+StreetAddress2.getStringCellValue();
+                    data[i-1][2] = ""+StreetAddress2.getStringCellValue();
 
                 HSSFCell City = row.getCell(3);
                 if(City==null)
-                    data[i][3] = "";
+                    data[i-1][3] = "";
                 else
-                    data[i][3] = ""+City.getStringCellValue();
+                    data[i-1][3] = ""+City.getStringCellValue();
 
                 HSSFCell State = row.getCell(4);
                 if(State==null)
-                    data[i][4] = "";
+                    data[i-1][4] = "";
                 else
-                    data[i][4] = ""+State.getStringCellValue();
+                    data[i-1][4] = ""+State.getStringCellValue();
 
                 HSSFCell Zipcode = row.getCell(5);
                 if(Zipcode==null)
-                    data[i][5] = "";
+                    data[i-1][5] = "";
                 else
-                    data[i][5] = ""+Zipcode.getNumericCellValue();
+                    data[i-1][5] = ""+Zipcode.getNumericCellValue();
 
                 HSSFCell Country = row.getCell(6);
                 if(Country==null)
-                    data[i][6] = "";
+                    data[i-1][6] = "";
                 else
-                    data[i][6] = ""+Country.getStringCellValue();
+                    data[i-1][6] = ""+Country.getStringCellValue();
 
                 HSSFCell PhoneNumber = row.getCell(7);
                 if(PhoneNumber==null)
-                    data[i][7] = "";
+                    data[i-1][7] = "";
                 else
-                    data[i][7] = ""+PhoneNumber.getNumericCellValue();
+                    data[i-1][7] = ""+PhoneNumber.getNumericCellValue();
 
                 HSSFCell FaxNumber = row.getCell(8);
                 if(FaxNumber==null)
-                    data[i][8] = "";
+                    data[i-1][8] = "";
                 else
-                    data[i][8] = ""+FaxNumber.getNumericCellValue();
+                    data[i-1][8] = ""+FaxNumber.getNumericCellValue();
 
                 HSSFCell MobileNumber = row.getCell(9);
                 if(MobileNumber==null)
-                    data[i][9] = "";
+                    data[i-1][9] = "";
                 else
-                    data[i][9] = ""+MobileNumber.getNumericCellValue();
+                    data[i-1][9] = ""+MobileNumber.getNumericCellValue();
 
                 HSSFCell EmailAddress = row.getCell(10);
                 if(EmailAddress==null)
-                    data[i][10] = "";
+                    data[i-1][10] = "";
                 else
-                    data[i][10] = ""+EmailAddress.getStringCellValue();
+                    data[i-1][10] = ""+EmailAddress.getStringCellValue();
 
                 HSSFCell WebAddress = row.getCell(11);
                 if(WebAddress==null)
-                    data[i][11] = "";
+                    data[i-1][11] = "";
                 else
-                    data[i][11] = ""+WebAddress.getStringCellValue();
+                    data[i-1][11] = ""+WebAddress.getStringCellValue();
 
                 HSSFCell VATID = row.getCell(12);
                 if(VATID==null)
-                    data[i][12] = "";
+                    data[i-1][12] = "";
                 else
-                    data[i][12] = ""+VATID.getNumericCellValue();
+                    data[i-1][12] = ""+VATID.getNumericCellValue();
 
                 HSSFCell TaxCode = row.getCell(13);
                 if(TaxCode==null)
-                    data[i][13] = "";
+                    data[i-1][13] = "";
                 else
 
-                    data[i][13] = ""+TaxCode.getNumericCellValue();
-
-                return data;
-
+                    data[i-1][13] = ""+TaxCode.getNumericCellValue();
 
                 // System.out.println("username:" + a1Val+", Password:" + a2Val);
             }
+
+//            return data;
 
         }
 
@@ -222,6 +218,13 @@ public class AddClientTest {
         {
             e.printStackTrace();
         }
+
+
+//        catch (WebDriverException e)
+//        {
+//            e.printStackTrace();
+//        }
+
 
         return data;
 
