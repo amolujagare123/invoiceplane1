@@ -9,8 +9,10 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.io.Zip;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -70,6 +72,7 @@ public class AddClientTest {
     }
 
 
+/*
     @Test
     public void trail() {
 
@@ -90,6 +93,7 @@ public class AddClientTest {
 
 
     }
+*/
 
 
     @DataProvider
@@ -108,10 +112,10 @@ public class AddClientTest {
 
             int rowCount = worksheet.getPhysicalNumberOfRows();
            System.out.println(rowCount);
-              data = new String[rowCount][14];
+              data = new String[rowCount-1][14];
             //System.out.println(rowCount);
 
-            for (int i = 1; i < rowCount-1; i++)
+            for (int i = 1; i < rowCount; i++)
             {
                 HSSFRow row = worksheet.getRow(i);
                // System.out.println(rowCount);
@@ -149,9 +153,10 @@ public class AddClientTest {
                 HSSFCell Zipcode = row.getCell(5);
                 if(Zipcode==null)
                     data[i-1][5] = "";
-                else
-                    data[i-1][5] = ""+Zipcode.getNumericCellValue();
-
+                else {
+                    Zipcode.setCellType(Cell.CELL_TYPE_STRING);
+                    data[i - 1][5] = "" + Zipcode.getStringCellValue();
+                }
                 HSSFCell Country = row.getCell(6);
                 if(Country==null)
                     data[i-1][6] = "";
@@ -161,20 +166,26 @@ public class AddClientTest {
                 HSSFCell PhoneNumber = row.getCell(7);
                 if(PhoneNumber==null)
                     data[i-1][7] = "";
-                else
-                    data[i-1][7] = ""+PhoneNumber.getNumericCellValue();
+                else {
+                    PhoneNumber.setCellType(Cell.CELL_TYPE_STRING);
+                    data[i - 1][7] = "" + PhoneNumber.getStringCellValue();
+                }
 
                 HSSFCell FaxNumber = row.getCell(8);
                 if(FaxNumber==null)
                     data[i-1][8] = "";
-                else
-                    data[i-1][8] = ""+FaxNumber.getNumericCellValue();
+                else {
+                    FaxNumber.setCellType(Cell.CELL_TYPE_STRING);
+                    data[i - 1][8] = "" + FaxNumber.getStringCellValue();
+                }
 
                 HSSFCell MobileNumber = row.getCell(9);
                 if(MobileNumber==null)
                     data[i-1][9] = "";
-                else
-                    data[i-1][9] = ""+MobileNumber.getNumericCellValue();
+                else {
+                    MobileNumber.setCellType(Cell.CELL_TYPE_STRING);
+                    data[i - 1][9] = "" + MobileNumber.getStringCellValue();
+                }
 
                 HSSFCell EmailAddress = row.getCell(10);
                 if(EmailAddress==null)
@@ -191,15 +202,19 @@ public class AddClientTest {
                 HSSFCell VATID = row.getCell(12);
                 if(VATID==null)
                     data[i-1][12] = "";
-                else
-                    data[i-1][12] = ""+VATID.getNumericCellValue();
+                else {
+                    VATID.setCellType(Cell.CELL_TYPE_STRING);
+                    data[i - 1][12] = "" + VATID.getStringCellValue();
+                }
 
                 HSSFCell TaxCode = row.getCell(13);
                 if(TaxCode==null)
                     data[i-1][13] = "";
-                else
+                else {
+                    TaxCode.setCellType(Cell.CELL_TYPE_STRING);
 
-                    data[i-1][13] = ""+TaxCode.getNumericCellValue();
+                    data[i - 1][13] = "" + TaxCode.getStringCellValue();
+                }
 
                 // System.out.println("username:" + a1Val+", Password:" + a2Val);
             }
@@ -208,16 +223,14 @@ public class AddClientTest {
 
         }
 
-        catch (FileNotFoundException e)
+
+        catch (Throwable e)
         {
             e.printStackTrace();
         }
 
 
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+
 
 
 //        catch (WebDriverException e)
