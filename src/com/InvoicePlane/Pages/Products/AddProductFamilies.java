@@ -25,11 +25,11 @@ public class AddProductFamilies {
     @FindBy(xpath = ".//*[@id='btn-cancel']")
     static WebElement btnCancel;
 
-    @FindBy(linkText = "Record successfully created")
+    @FindBy(xpath = "//div[@id='content']/div[1]")
     WebElement recordAdded;
 
-    @FindBy(linkText = "Family already exists!")
-    WebElement alreadyExistsRecord;
+    @FindBy(xpath = "//div[@id='content']/div[1]")
+    WebElement alreadyExistedRecord;
 
     WebDriver driver;
 
@@ -62,4 +62,14 @@ public class AddProductFamilies {
     {
         btnCancel.click();
     }
+
+    public String getrecordAdded()
+    {
+        return recordAdded.getText();
+    }
+    public String getexistedRecord()
+    {
+        return alreadyExistedRecord.getText();
+    }
+
 }
