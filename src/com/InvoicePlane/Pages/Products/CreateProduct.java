@@ -133,7 +133,8 @@ public class CreateProduct {
     {
         return lblTaxRate.getText();
     }
-    public void setTaxrate(String taxrate)
+    public void setTaxrate(String
+                                   taxrate)
     {
         Select tr=new Select(comboTaxRate);
         tr.selectByVisibleText(taxrate);

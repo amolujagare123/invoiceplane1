@@ -47,7 +47,7 @@ public class Menu {
     @FindBy (xpath ="//span[text()='View Recurring Invoices']")
     WebElement lnkViewRecurringInvoices;
 
-    @FindBy(xpath = "//span[text()='Products']")
+    @FindBy(xpath = "//span[@class='hidden-sm' and text()='Products']")
     WebElement lnkProducts;
 
 //    @FindBy(xpath = "//span[text()='Create Product']")
@@ -96,7 +96,6 @@ public class Menu {
         PageFactory.initElements(driver, this);
 
     }
-
 
 
     public void clickDashboard()
